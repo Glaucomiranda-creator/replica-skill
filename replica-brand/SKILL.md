@@ -54,7 +54,8 @@ the date it was run. Never write "available" for a check nobody ran.
 | the web | search "name + category" |
 
 These are screening checks, not legal clearance. Before spending money on
-the name, a trademark lawyer should do a proper search.
+the name, a trademark lawyer should do a proper search. Store listings for
+other apps change daily: date every check and re-run them close to launch.
 
 ## Step 3: palette
 

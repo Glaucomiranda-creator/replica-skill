@@ -18,6 +18,8 @@ fine print is at the bottom, and the skills enforce it.
 
 ## Install
 
+The plugin root also contains a pack-level `SKILL.md` with the clean-room and approval boundaries. Individual commands remain available as separate skills.
+
 Paste this into Claude:
 
 ```
@@ -120,6 +122,16 @@ are only thinking about cloning is a good way to find out if you should.
 
 Six of them, all standard-library Python. None touch the network.
 
+## Validation
+
+Run the standard library test suite with:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+This validates skill import and basic validation, then checks every helper script’s behaviour.
+
 ```bash
 python3 replica-diff/imgdiff.py original.png clone.png --out diff.png   # layout diff, ignores colour
 python3 replica-diff/parity.py replica/features.csv                     # parity score + missing list
@@ -188,6 +200,7 @@ there is money on the line. This is not legal advice.
 ## Files
 
 ```
+SKILL.md              pack-wide boundaries and workflow index
 replica-recon/         SKILL.md, recon-map.md, features.csv (the matrix template)
 replica-architect/     SKILL.md, architecture.md
 replica-design/        SKILL.md, tokens.json, contrast.py
@@ -203,7 +216,8 @@ tests/                 the tests for every tool
 ```
 
 Your own files live in `replica/` in your project. The skills read each
-other's.
+other's. The pack-level `SKILL.md` provides shared safety boundaries and
+workflow orientation for clients that load the repository as a skill.
 
 ## Credit
 

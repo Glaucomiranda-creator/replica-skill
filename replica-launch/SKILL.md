@@ -77,6 +77,11 @@ description 80, full 4000), counts characters the way a person does, flags
 ranking and price claims in short fields, emoji, wasted keyword characters,
 and **any name from `avoid`** anywhere in the listing. Exit 1 on an error.
 
+These limits and review requirements can change. Before submission, verify
+current field limits and policies in the official App Store Connect and Play
+Console documentation; record when each was checked. The linter is a useful
+guard, not a guarantee of acceptance.
+
 Apple's App Review Guideline 4.1 (Copycats) rejects apps that simply copy a
 popular app or make minor changes to another app's name or UI. Your fixes
 and your own brand are what get you through review, so make them visible in

@@ -78,7 +78,8 @@ Only report what you reproduced. "Might be an issue" goes in a separate
 
 Fix S1 and S2 first. For every fix: write the failing test first, fix, watch
 it pass, keep the test. Re-run the whole suite after each batch. Update
-`bugs.md` with the commit that fixed each one.
+`bugs.md` with the fix reference the user approves. Do not commit, push or
+deploy fixes on your own: re-deploying, even to staging, is the user's call.
 
 ## Output
 

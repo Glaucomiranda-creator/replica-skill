@@ -97,3 +97,8 @@ check.
 `tokens.json`, `tokens.css`, the Tailwind config, `components.md`, the
 primitives built, and a contrast report with zero AA failures. Next:
 `/replica-build`.
+
+The tokens are the user's own palette, not the original's brand colours. If
+the layout study pulled exact hex values from screenshots, that is for
+analysis only: pick equivalent roles and check them with `contrast.py`
+before they reach code.

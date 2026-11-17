@@ -56,7 +56,7 @@ Work in the order of `architecture.md`. For each screen:
 6. Set the matching rows in `features.csv` to `yes` or `partial` (with a note).
 7. Screenshot it at the same viewport as the reference into
    `replica/clone-screens/S07.png` for replica-diff.
-8. One commit per screen: `build: S07 booking page`.
+8. Summarize the screen's changes and verification. Do not commit unless the user explicitly asks; if authorized, follow the repository's commit convention.
 
 ## Definition of done, per screen
 
@@ -67,6 +67,7 @@ Work in the order of `architecture.md`. For each screen:
 - [ ] no hard-coded copy borrowed from the original
 - [ ] features.csv updated
 - [ ] screenshot saved for diff
+- [ ] tested the screen's primary flow and reported the actual result
 
 ## Step 4: the build log
 

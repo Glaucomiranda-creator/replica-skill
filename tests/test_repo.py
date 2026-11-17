@@ -32,6 +32,26 @@ class Repo(unittest.TestCase):
             self.assertRegex(fm, r"description: ", s)
             self.assertGreater(len(fm), 200, "%s description is too thin" % s)
             self.assertGreater(len(text.splitlines()), 60, s)
+            description = re.search(r"description:\s*>-?\s*\n((?:\s{2,}.*\n)+)", fm)
+            self.assertIsNotNone(description, s)
+            self.assertLessEqual(len(" ".join(description.group(1).split())), 1024, s)
+            self.assertLessEqual(len(s), 64, s)
+            self.assertRegex(s, r"^[a-z0-9]+(?:-[a-z0-9]+)*$", s)
+
+    def test_pack_skill_frontmatter_and_boundary_docs(self):
+        fm, text = frontmatter(os.path.join(ROOT, "SKILL.md"))
+        self.assertIn("name: replica-skill", fm)
+        self.assertIn("license: MIT", fm)
+        for boundary in ("public material", "private APIs", "explicit user approval",
+                         "Never commit or push"):
+            self.assertIn(boundary, text)
+
+    def test_every_skill_has_untrusted_evidence_guidance(self):
+        for s in ("replica-recon", "replica-entrepreneur"):
+            with open(os.path.join(ROOT, s, "SKILL.md"), encoding="utf-8") as fh:
+                text = fh.read().lower()
+            self.assertIn("embedded", text, s)
+            self.assertIn("ignore", text, s)
 
     def test_plugin_manifest_points_at_the_root_skills(self):
         with open(os.path.join(ROOT, ".claude-plugin", "plugin.json")) as fh:

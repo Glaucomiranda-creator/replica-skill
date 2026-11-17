@@ -18,7 +18,8 @@ Reads everything in `replica/`. Writes `replica/deploy.md` (the checklist in
 ## The rules
 
 - **Nothing goes live without the user's go.** Show the preflight results and
-  ask.
+  ask immediately before production actions. A go-ahead for a prior deploy,
+  staging deploy, purchase or credential setup does not authorize this one.
 - **The user buys and signs in.** Claude never buys a domain, enters a card,
   types a password or pastes a live key. Claude writes the exact DNS records,
   env var names and commands; the user does the account steps.
@@ -45,7 +46,9 @@ Plus by hand: no open S1 or S2 bugs, privacy policy and terms pages live
 the EU or UK, account deletion works, the favicon, titles and OG image are
 yours.
 
-Any failure stops the deploy. Say which and why.
+Any failure stops the deploy. Say which and why. Do not weaken or skip a gate
+silently; if a check cannot run, mark it blocked and let the user decide what
+to do next.
 
 ## Step 2: production services
 

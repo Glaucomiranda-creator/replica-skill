@@ -113,3 +113,7 @@ Each milestone lists its screens (S-IDs), tables and routes.
 `replica/architecture.md`, the SQL in `replica/schema.sql` or as the first
 migration, and a summary: stack in one line, table count, route count, the
 three riskiest parts, and the next step: `/replica-design`.
+
+Decisions you are unsure about (auth model, tenancy, a swap from the default
+stack) go in the file with the alternative you rejected and why, so a later
+stage can revisit them with the reasoning in front of it.
